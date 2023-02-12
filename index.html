@@ -204,23 +204,21 @@
       var formData = this;
       window.alert = null;
       delete window.alert;
-      
+  
       try {
         const response = await axios.post("https://formspree.io/f/mdovepej", formData);
         console.log("Request successful!");
+        document.getElementById("msg").innerHTML = "Ditt mejl har skickats!";
       } catch (error) {
         if (error.response) {
           console.log(error.response.status);
-          // Kod här för när det lyckas.
-          alert("Ditt mejl har skickats!");
         } else {
           console.log(error.message);
-          // Lägg in kod här för när det inte lyckas.
-          alert("Ditt mejl kunde inte skickas.");
         }
-  
-        event.target.reset();
+          document.getElementById("msg").innerHTML = "Ditt mejl kunde inte skickas, prova igen senare eller skicka ett mejl till sophiaglender@gmail.com.";
+          document.getElementById("msg").style = "color: red;";
       }
+      event.target.reset();
     });
   </script>
 
