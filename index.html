@@ -196,6 +196,31 @@
 
 </script>
 
+<script>
+    document.getElementById("kontakta-mig").addEventListener("submit", async function(event) {
+      event.preventDefault();
+      
+      var formData = this;
+  
+      try {
+        const response = await axios.post("https://formspree.io/f/mdovepej", formData);
+        console.log("Request successful!");
+      } catch (error) {
+        if (error.response) {
+          console.log(error.response.status);
+          // Kod här för när det lyckas.
+          alert("Ditt mejl har skickats!");
+        } else {
+          console.log(error.message);
+          // Lägg in kod här för när det inte lyckas.
+          alert("Ditt mejl kunde inte skickas.");
+        }
+  
+        event.target.reset();
+      }
+    });
+  </script>
+
 
 
 
