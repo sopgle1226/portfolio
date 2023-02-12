@@ -210,10 +210,12 @@
         if (error.response) {
           console.log(error.response.status);
           // Kod här för när det lyckas.
+          delete window.alert; // true
           alert("Ditt mejl har skickats!");
         } else {
           console.log(error.message);
           // Lägg in kod här för när det inte lyckas.
+          delete window.alert; // true
           alert("Ditt mejl kunde inte skickas.");
         }
   
