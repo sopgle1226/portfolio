@@ -417,6 +417,9 @@ nav .fas{
     .header-text h1{
         font-size: 30px;
     }
+    .logo{
+        width: 80px;
+    }
     nav .fas{
         display: block;
         font-size: 25px;
