@@ -196,6 +196,21 @@
 
 </script>
 
+<script>
+    var navbar = document.getElementById("navbar");
+    var sidemenu = document.getElementById("sidemenu");
+
+    window.onscroll = function(){
+        if(window.pageYOffset >= sidemenu.offsetTop){
+            navbar.classList.add("sicky");
+        }
+        else{
+            navbar.classList.remove("sticky");
+        }
+    }
+
+</script>
+
 <script type="text/javascript" >
     document.getElementById("kontakta-mig").addEventListener("submit", async function(event) {
       event.preventDefault();
